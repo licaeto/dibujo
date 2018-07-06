@@ -1,0 +1,206 @@
+size([2 4 5])
+
+ans =
+
+     1     3
+
+size(1)
+
+ans =
+
+     1     1
+
+size([2 4 5],2)
+
+ans =
+
+     3
+
+A=imread('gatete.png');
+A_umbralizada=umbralizar(A,125);
+A_negativizada=negativiza(A_umbralizada);
+imshow(A_negativizada)
+[Warning: MATLAB has disabled some advanced graphics rendering features by switching to software
+OpenGL. For more information, click <a href="matlab:opengl('problems')">here</a>.] 
+imshow(A_umbralizada)
+opengl('problems')
+A_negativizada=A_umbralizada==0;
+imshow(A_negativizada)
+A_etiquetada=bwlabel(A_negativizada,4);
+imshow(A_etiquetada);
+imshow(A_negativizada)
+imshow(A_etiquetada);
+max(max(A_etiquetada))
+
+ans =
+
+    25
+
+sum(sum(A_etiquetada==1));
+sum(sum(A_etiquetada==1))
+
+ans =
+
+       37998
+
+sum(sum(A_etiquetada==2))
+
+ans =
+
+     3
+
+sum(sum(A_etiquetada==3))
+
+ans =
+
+     8
+
+sum(sum(A_etiquetada==4))
+
+ans =
+
+     1
+
+syms x
+eqn = max(sum(sum(B==x))
+ eqn = max(sum(sum(B==x))
+                         ↑
+{Error: Expression or statement is incorrect--possibly unbalanced (, {, or [.
+} 
+eqn = max(sum(sum(B==x)))
+{Undefined function or variable 'B'.
+} 
+eqn = max(sum(sum(A_etiquetada==x)))
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('symengine')" style="font-weight:bold">symengine</a>
+Invalid index '(1, 335)' is found in the input table or list.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('sym/privUnaryOp', '/usr/local/MATLAB/R2016a/toolbox/symbolic/symbolic/@sym/sym.m', 943)" style="font-weight:bold">sym/privUnaryOp</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2016a/toolbox/symbolic/symbolic/@sym/sym.m',943,0)">line 943</a>)
+            Csym = mupadmex(op,args{1}.s,varargin{:});
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('sym/sum', '/usr/local/MATLAB/R2016a/toolbox/symbolic/symbolic/@sym/sum.m', 56)" style="font-weight:bold">sym/sum</a> (<a href="matlab: opentoline('/usr/local/MATLAB/R2016a/toolbox/symbolic/symbolic/@sym/sum.m',56,0)">line 56</a>)
+    s = privUnaryOp(A, 'symobj::prodsum', '_plus');
+} 
+for i=0:max(max(A_etiquetada))
+sum(sum(A_etiquetada==i))
+endfor
+end
+
+ans =
+
+       24919
+
+{Undefined function or variable 'endfor'.
+} 
+auxmax=0;
+for i=0:max(max(A_etiquetada))
+if sum(sum(A_etiquetada==i)) > auxmax
+auxmax=sum(sum(A_etiquetada==i));
+end
+end
+auxmax=0;
+fondo=0;
+for i=0:max(max(A_etiquetada))
+if sum(sum(A_etiquetada==i)) > auxmax
+auxmax=sum(sum(A_etiquetada==i));
+fondo=i;
+end
+end
+sum(sum(A_etiquetada==1))
+
+ans =
+
+       37998
+
+A_sinFondo=A_etiquetada~=fondo;
+imshow(A_sinFondo)
+histogram(A_etiquetada,max(max(A_etiquetada)));
+histogram(A_etiquetada,max(max(A_etiquetada)));
+A_sin_ruido=A_etiquetada<(auxmax/300);
+imshow(A_sin_ruido)
+imshow(A_etiquetada)
+sum(A_sin_ruido)
+
+ans =
+
+  Columns 1 through 17
+
+   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234
+
+  Columns 18 through 34
+
+   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234
+
+  Columns 35 through 51
+
+   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234
+
+  Columns 52 through 68
+
+   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234
+
+  Columns 69 through 85
+
+   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234
+
+  Columns 86 through 102
+
+   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234
+
+  Columns 103 through 119
+
+   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234
+
+  Columns 120 through 136
+
+   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234
+
+  Columns 137 through 153
+
+   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234
+
+  Columns 154 through 170
+
+   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234
+
+  Columns 171 through 187
+
+   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234
+
+  Columns 188 through 204
+
+   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234
+
+  Columns 205 through 221
+
+   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234
+
+  Columns 222 through 238
+
+   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234
+
+  Columns 239 through 255
+
+   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234
+
+  Columns 256 through 270
+
+   234   234   234   234   234   234   234   234   234   234   234   234   234   234   234
+
+A_sin_ruido=A_etiquetada<(auxmax/300);
+A=[1 2 3;4 5 6;7 8 9]
+
+A =
+
+     1     2     3
+     4     5     6
+     7     8     9
+
+A(A==2)=0
+
+A =
+
+     1     0     3
+     4     5     6
+     7     8     9
+
+diary off
